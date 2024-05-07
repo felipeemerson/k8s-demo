@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: fib-calculator-shop-tls
+spec:
+  secretName: fib-calculator-shop
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: fib-calculator.shop
+  dnsNames:
+    - fib-calculator.shop
+    - www.fib-calculator.shop
